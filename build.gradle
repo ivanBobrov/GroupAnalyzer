@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.5
+version = '1.0'
+mainClassName = 'analizer.Main'
+
+repositories {
+    mavenCentral()
+}
+
+idea {
+    module {
+        sourceDirs += file('src')
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    manifest.attributes("Main-Class": mainClassName);
+}
